@@ -1,0 +1,4 @@
+<div id="container">
+  <input type="text" [(ngModel)]="todo" [ngModelOptions]="{standalone: true}" placeholder="Add item.." #input (keyup.enter)="addTodo(input.value)">
+  <i class="material-icons add-icon" (click)="addTodo(input.value)" >add</i>
+</div>

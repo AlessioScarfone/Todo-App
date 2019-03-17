@@ -1,0 +1,22 @@
+$dark-gray:#595959;
+
+div {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+p {
+  color: $dark-gray;
+
+  span {
+    font-size: 1.0rem;
+  }
+
+  span:nth-child(1) {
+    font-weight: bold;
+    color: black;
+    margin-right: 5px;
+    padding-right: 0px;
+  }
+}

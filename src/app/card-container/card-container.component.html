@@ -1,0 +1,63 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop mdl-cell--1-offset-tablet">
+    <!-- <h2 class="title">ToDo App</h2> -->
+    <div class="demo-card-wide mdl-card mdl-shadow--8dp">
+      <div class="mdl-card__title">
+        <!-- <h2 class="mdl-card__title-text">ToDo App</h2> -->
+      </div>
+      <div class="mdl-card__supporting-text mdl-grid">
+        <div class="mdl-cell mdl-cell--8-col">
+          <span class="underline big">{{text}}</span>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--1-offset-desktop">
+          <span id="date">{{clock | date:'d MMM. yy -'}}</span>
+          <span id="clock" class="underline magical">{{clock | date:'HH:mm'}}</span>
+        </div>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border mdl-grid" id="action-bar">
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet mdl-cell--1-col-phone centered-container">
+          <div class="material-icons mdl-badge mdl-badge--overlap icon icon-36" attr.data-badge={{getTodoNotCompleted()}}
+            id="todo-badge">assignment</div>
+          <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="todo-badge">
+            Tasks to complete.
+          </div>
+        </div>
+
+        <app-add-todo (updateViewEmitter)="addNewTaskToView($event)" class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--2-col-phone centered-container"></app-add-todo>
+
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet mdl-cell--1-col-phone centered-container">
+          <div class="material-icons mdl-badge mdl-badge--overlap icon icon-36" (click)="deleteCompleted()"
+            attr.data-badge={{getTodoCompleted()}} id="remove-completed-badge">delete_forever</div>
+          <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left" data-mdl-for="remove-completed-badge">
+            Delete all completed tasks.
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+
+        <div *ngIf="todos.length==0" id="image-empty-list">
+          <h4>Good! Your task list is empty! ✌️ </h4>
+          <img src="../../assets/hugo-list-is-empty.png" alt="empty list">
+          <a class="underline" href="https://icons8.com">Illustration by Ouch.pics</a>
+
+        </div>
+
+        <ul class="mdl-list">
+          <li *ngFor="let todo of todos;index as i" class="mdl-list__item" (click)="completeTodo($event,i)"
+            [class.completed]="todo.done">
+            <i class="mdl-list__item-secondary-action material-icons done-icon">done</i>
+            <span class="mdl-list__item-primary-content">
+              {{todo.text}}
+            </span>
+            <i class="mdl-list__item-secondary-action material-icons remove-icon" (click)="removeTodo(i)">add</i>
+          </li>
+
+        </ul>
+      </div>
+      <div class="mdl-card__menu">
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,42 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  height: 1.5em;
+  padding: 2px 8px;
+  margin-left: 10px;
+  margin-right: -10px;
+  margin-top: 5px;
+  // box-shadow: 2px 2px 10px lightgray;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.add-icon {
+  user-select: none;
+  color: lightgray;
+  background: white;
+  z-index: 1;
+  position: relative;
+  top: 2px;
+  right: 0.75em;
+  border-left: 1px solid lightgray;
+
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
+}

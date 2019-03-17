@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+}
+
+html {
+  height: 95vh;
+}
+
+body {
+  margin-top: 3vh;
+  background-color: #f0f0f0;
+}
+
+
+.not-visible {
+  visibility: hidden;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+}
+
+$gradient: linear-gradient(120deg, #8fd3f4 0%, rgb(120, 169, 253) 100%, rgb(38, 117, 253) 100%);
+
+.underline {
+  padding-left: 2px;
+  padding-right: 5px;
+  background-image: $gradient;
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
+  background-position: 0 88%;
+
+  &.big {
+    background-position: 0% 92%;
+    background-size: 100% 0.35em;
+  }
+
+  &.magical {
+    transition: background-size 0.25s ease-in;
+
+    &:hover {
+      background-size: 100% 95%;
+    }
+  }
+}

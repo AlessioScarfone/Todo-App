@@ -1,18 +1,11 @@
-# TodoApp
+# TodoApp :clipboard:
 
-## Development server
+Simple "ToDo" application :clipboard: developed with Angular. The app is hosted on GitHub Pages :octocat: :page_with_curl: at [link](https://alessioscarfone.github.io/Todo-App/) :link:
+
+## Development server :recycle:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
+## Build :construction:
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
